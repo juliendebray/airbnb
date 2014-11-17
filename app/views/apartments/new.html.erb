@@ -1,0 +1,15 @@
+<h1>Create an Apartment</h1>
+
+<%= form_for(@apartment) do |f| %>
+
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+
+
+  <%= f.submit %>
+<% end %>
