@@ -20,6 +20,7 @@ class ApartmentsController < ApplicationController
   end
 
   def index
+
   end
 
   def destroy
