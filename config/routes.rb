@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :users, only: [:index, :new, :create]
+  resources :apartments
+
+
   devise_for :users
   root 'home#index'
 
