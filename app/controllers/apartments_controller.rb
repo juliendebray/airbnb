@@ -20,6 +20,11 @@ class ApartmentsController < ApplicationController
   end
 
   def index
+    @apartments = Apartment.where(address: params[:search][:address])
+    @apartements.reject do |apartment|
+      apartment.bookings.where('start_date < ? OR end_date > ?',
+        Date.parse(params[:start_date]), Date.parse(params[:end_date]))
+    end
 
   end
 
