@@ -1,6 +1,6 @@
 <h1>Create an Apartment</h1>
 
-<%= form_for(@apartment) do |f| %>
+<%= form_for(@apartment, html: { multipart: true}) do |f| %>
 
   <%= f.label :address %>
   <%= f.text_field :address %>
@@ -9,5 +9,11 @@
   <%= f.label :price %>
   <%= f.number_field :price %>
 
-  <%= f.submit %>
+  <p>
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+  </p>
+  <p><%= f.submit %></p>
+
+
 <% end %>
