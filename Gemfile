@@ -1,6 +1,13 @@
 source 'https://rubygems.org'
 
+# Devise with fb-omniauth extension
+gem 'omniauth-facebook'
 
+# For extended use of fb API (getting user's friends infos, posting on his wall..)
+gem 'koala'
+
+# For handling API keys
+gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use postgresql as the database for Active Record
