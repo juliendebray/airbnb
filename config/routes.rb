@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
+  root 'home#index'
 
-  resources :users, only: [:index, :new, :create]
 
-  resources :apartments do
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+
+
+  resources :apartments, only: [:new, :create, :show, :index] do
     resources :bookings, only: [:create]
   end
 
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-  root 'apartments#index'
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
