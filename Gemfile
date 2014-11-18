@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk'
+gem 'paperclip'
+
+gem 'bootstrap-sass', '~> 3.3.0'
 # Devise with fb-omniauth extension
 gem 'omniauth-facebook'
 
