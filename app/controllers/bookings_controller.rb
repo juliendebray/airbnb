@@ -1,11 +1,15 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_apartment, only: :create
+
   def create
     @booking = current_user.bookings.new(booking_params)
     @booking.apartment = @apartment
-    @booking.save
-    redirect_to @apartment
+    if @booking.save
+      redirect_to @apartment, notice: 'Booking was successfully created.'
+    else
+      redirect_to @apartment, alert: 'Apartment is not available'
+    end
   end
 
   private
