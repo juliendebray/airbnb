@@ -3,6 +3,8 @@
 
 <p>Find me in app/views/apartments/show.html.erb</p>
 
+<%= image_tag @apartment.picture.url(:medium) %>
+
 <h2>Apartment infos:</h2>
 <ul>
   <li>Address: <%= @apartment.address %></li>
