@@ -1,6 +1,5 @@
 class ApartmentsController < ApplicationController
   def new
-
     @user = current_user
     if @user
       @apartment = @user.apartments.new
@@ -43,6 +42,7 @@ class ApartmentsController < ApplicationController
 
   def show
     @apartment = Apartment.find(params[:id])
+    @booking = @apartment.bookings.new
   end
 
  private

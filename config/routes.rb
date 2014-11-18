@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :users, only: [:index, :new, :create]
-  resources :apartments
 
+  resources :apartments do
+    resources :bookings, only: [:create]
+  end
 
   devise_for :users
   root 'apartments#index'
