@@ -19,13 +19,23 @@ class ApartmentsController < ApplicationController
     end
   end
 
-  def index
-    @apartments = Apartment.where(address: params[:search][:address])
-    @apartements.reject do |apartment|
-      apartment.bookings.where('start_date < ? OR end_date > ?',
-        Date.parse(params[:start_date]), Date.parse(params[:end_date]))
-    end
+  def index #TODO : use a single SQL request with outer join
+    if params[:search]
+      @address = params[:search][:address]
+      @start_date = params[:search][:start_date]
+      @end_date = params[:search][:end_date]
 
+      all_apartments_with_address = Apartment.where(address: @address)
+      @apartments = all_apartments_with_address.select do |apartment|
+        bookings = apartment.bookings.where('start_date < :end_date AND end_date > :start_date',
+          end_date: Date.parse(@end_date),
+          start_date: Date.parse(@start_date)
+        )
+        bookings.count == 0
+      end
+    else
+      @apartments = Apartment.all
+    end
   end
 
   def destroy
