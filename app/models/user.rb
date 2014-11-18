@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:facebook]
 
   has_many :apartments
+  has_many :bookings
 
   validates :email, presence: true
   validates :first_name, presence: true
