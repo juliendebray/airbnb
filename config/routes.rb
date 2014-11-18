@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'bookings/create'
+
   resources :users, only: [:index, :new, :create]
   resources :apartments
 
