@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+
+  get 'users/show'
+
   root 'home#index'
 
 
@@ -6,8 +10,14 @@ Rails.application.routes.draw do
 
 
   resources :apartments, only: [:new, :create, :show, :index] do
+
     resources :bookings, only: [:create, :show]
+    resources :bookmarks, only: [:create]
+
   end
+
+  resources :users, only: [:show]
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
