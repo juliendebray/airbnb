@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:create]
   end
 
+  resources :users, only: [:show]
 
 
 

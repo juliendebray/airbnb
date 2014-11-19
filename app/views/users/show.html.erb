@@ -1,2 +1,28 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>My account</h1>
+<h2>My bookings</h2>
+<ul>
+  <% @bookings.each do |b| %>
+  <li>
+    <%= "From the #{b.start_date} to the #{b.end_date} at #{b.apartment.address}" %>
+  </li>
+  <% end %>
+</ul>
+<h2>My bookmarks</h2>
+<ul>
+  <% @bookmarks.each do |b| %>
+  <li>
+    <%= b.apartment.address %>
+    <%= image_tag(b.apartment.picture.url(:medium))%>
+  </li>
+  <% end %>
+</ul>
+
+<h2>My apartments</h2>
+<ul>
+  <% @apartments.each do |a| %>
+  <li>
+    <%= "Addresse: #{a.address}" %>
+  </li>
+  <% end %>
+</ul>
+
