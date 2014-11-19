@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'bookmarks/new'
+
+  get 'bookmarks/create'
+
+  get 'bookmarks/index'
+
+  get 'bookmarks/destroy'
+
   root 'home#index'
 
 
