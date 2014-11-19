@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'bookmarks/new'
 
-  get 'bookmarks/create'
-
-  get 'bookmarks/index'
-
-  get 'bookmarks/destroy'
 
   root 'home#index'
 
@@ -15,7 +9,10 @@ Rails.application.routes.draw do
 
   resources :apartments, only: [:new, :create, :show, :index] do
     resources :bookings, only: [:create]
+    resources :bookmarks, only: [:create]
   end
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

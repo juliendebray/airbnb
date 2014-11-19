@@ -24,6 +24,9 @@
     <% @apartments.each do |a| %>
       <li>
         <%= "address : #{a.address}, price: #{a.price}" %>
+        -
+        <%= link_to 'Bookmark me!!', apartment_bookmarks_path(a), method: :post, data: {
+          confirm: 'You really want to add this apartment to your wishlist??'}  %>
       </li>
     <% end %>
   </ul>
