@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
 
   resources :apartments, only: [:new, :create, :show, :index] do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:create, :show]
   end
 
 

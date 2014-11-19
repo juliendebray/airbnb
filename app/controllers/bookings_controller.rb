@@ -6,10 +6,14 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.new(booking_params)
     @booking.apartment = @apartment
     if @booking.save
-      redirect_to @apartment, notice: 'Booking was successfully created.'
+      redirect_to apartment_booking_path(@apartment, @booking)
+      # redirect_to @apartment, notice: 'Booking was successfully created.'
     else
       redirect_to @apartment, alert: 'Apartment is not available'
     end
+  end
+
+  def show
   end
 
   private

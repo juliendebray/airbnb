@@ -1,4 +1,4 @@
-<h1>Apartments#index</h1>
+<h1>Available appartments</h1>
 
 <%= form_tag(apartments_path, method: "get") do %>
   <div class="field">
@@ -23,7 +23,8 @@
   <ul>
     <% @apartments.each do |a| %>
       <li>
-        <%= "address : #{a.address}, price: #{a.price}" %>
+        <%= link_to image_tag(a.picture.url(:medium)), apartment_path(a) %>
+        <%= "address : #{a.address}, price: #{a.price}"%>
       </li>
     <% end %>
   </ul>
