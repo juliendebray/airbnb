@@ -9,9 +9,6 @@ class BookmarksController < ApplicationController
     redirect_to apartments_path(@apartment)
   end
 
-  def index
-
-  end
 
   def destroy
   end
