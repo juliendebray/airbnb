@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">
-        <%= image_tag "Logo.jpg", id: "logo" %>
+        <%= link_to image_tag("Logo.jpg", id: "logo"), root_path %>
       </a>
     </div>
 
@@ -36,12 +36,11 @@
             <%= link_to "Facebook Connect", user_omniauth_authorize_path(:facebook) %>
           </li>
           <li>
-            <%= link_to "Sign in", new_user_session_path %>
+            <%= link_to "Sign up", new_user_registration_path %>
           </li>
           <li>
-            <%= link_to "Register", new_user_registration_path %>
+            <%= link_to "Sign in", new_user_session_path %>
           </li>
-
 
         <% end %>
         <li><a href=<%="#{new_apartment_path}"%> class="btn btn-primary" id="nav-btn">Publish an announce</a></li>
