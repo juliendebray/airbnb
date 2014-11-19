@@ -1,18 +1,17 @@
-<h1>Apartments#show</h1>
 <%= render 'apartments/search_form' %>
 
-<p>Find me in app/views/apartments/show.html.erb</p>
+<h1>Appartment</h1>
 
 <%= image_tag @apartment.picture.url(:medium) %>
 
-<h2>Apartment infos:</h2>
+<h2>Appartment infos:</h2>
 <ul>
   <li>Address: <%= @apartment.address %></li>
   <li>Description: <%= @apartment.description%></li>
   <li>Price per night: <%= @apartment.price%></li>
 </ul>
 
-<h2>Apartment bookings:</h2>
+<h2>Appartment bookings:</h2>
 <ul>
 <% @apartment.bookings[0...-1].each do |b|%>
   <li>
