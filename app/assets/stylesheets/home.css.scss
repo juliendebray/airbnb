@@ -11,14 +11,27 @@ form .field {
   background-image: url("HP.jpg");
   background-size: cover;
   background-attachment: fixed;
-  font-family: 'Open Sans', sans-serif;
   color: white ;
   height: 800px;
-  padding-top: 120px;
+  padding-top: 200px;
 }
 
-.wrapper h1,
-#hp-form {
-  padding-top: 30px;
-  color: white;
+.wrapper {
+
+  #hp-form {
+    background: rgba(0,0,0,0.4);
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 10px;
+    border-radius: 5px;
+  }
+  h1{
+    color: white;
+    font-family: "Montserrat", sans-serif;
+  }
+  h2 {
+    font-weight: 300;
+    margin-bottom: 50px;
+  }
 }
