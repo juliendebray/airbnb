@@ -6,3 +6,19 @@ form .field {
   display: inline;
   border: 1px dotted grey;
 }
+
+.wrapper {
+  background-image: url("HP.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Open Sans', sans-serif;
+  color: white ;
+  height: 800px;
+  padding-top: 120px;
+}
+
+.wrapper h1,
+#hp-form {
+  padding-top: 30px;
+  color: white;
+}

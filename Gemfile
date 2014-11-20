@@ -52,7 +52,6 @@ gem 'better_errors'
 
 gem "letter_opener", group: :development
 
-
 gem "geocoder"
 
 gem 'bootstrap_form'
