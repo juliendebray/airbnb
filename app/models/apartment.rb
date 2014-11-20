@@ -2,6 +2,7 @@ class Apartment < ActiveRecord::Base
   belongs_to :user
   has_many :bookings
   has_many :bookmarks
+
   validates :address, presence: true
   validates :description, presence: true
   validates :price, presence: true
@@ -12,5 +13,9 @@ class Apartment < ActiveRecord::Base
 
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
+
+  geocoded_by :address
+  after_validation :geocode if :address_changed?
+
 
 end
