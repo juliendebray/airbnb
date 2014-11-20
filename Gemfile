@@ -52,7 +52,10 @@ gem 'better_errors'
 
 gem "letter_opener", group: :development
 
+
 gem "geocoder"
+
+gem 'bootstrap_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

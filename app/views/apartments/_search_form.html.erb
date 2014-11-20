@@ -1,17 +1,16 @@
-<%= form_tag(apartments_path, method: "get") do %>
-  <div class="field">
+<%= form_tag(apartments_path, class: 'form-inline' ) do %>
+  <div class="form-group">
     <%= label_tag('search[address]', "Address:") %>
-    <%= text_field_tag 'search[address]', @address, placeholder: 'salut les gars' %>
+    <%= text_field_tag 'search[address]', @address, placeholder: 'where to?', class: 'form-control' %>
   </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= label_tag( 'search[start_date]', "Start date:") %>
-    <%= date_field_tag('search[start_date]', @start_date) %>
+    <%= date_field_tag('search[start_date]', @start_date, class: 'form-control') %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= label_tag('search[end_date]', "End date:") %>
-    <%= date_field_tag('search[end_date]', @end_date) %>
+    <%= date_field_tag('search[end_date]', @end_date, class: 'form-control') %>
   </div>
 
   <%= submit_tag("Search") %>
