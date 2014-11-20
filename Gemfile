@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
+gem "gmaps4rails"
+gem "rails-assets-underscore"
 
 # Heroku deployment
 ruby '2.1.2'
@@ -48,6 +51,9 @@ gem 'binding_of_caller'
 gem 'better_errors'
 
 gem "letter_opener", group: :development
+
+
+gem "geocoder"
 
 gem 'bootstrap_form'
 
