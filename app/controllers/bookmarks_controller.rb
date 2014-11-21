@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_apartment, only: [:create]
+  before_action :find_apartment, only: [:create, :destroy]
 
   def create
     bookmark = @apartment.bookmarks.new(user_id:current_user.id)
@@ -11,6 +11,9 @@ class BookmarksController < ApplicationController
 
 
   def destroy
+    bookmark = Bookmark.find(params[:id])
+    bookmark.destroy
+    redirect_to user_path(current_user)
   end
 
   private
