@@ -1,61 +1,69 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <h1>My account</h1>
-    </div>
-  </div>
-</div>
+<div class="container content">
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h2>My bookings</h2>
-        <ul>
-        <% @bookings.each do |b| %>
-          <li>
-            <%= "From the #{b.start_date} to the #{b.end_date} at #{b.apartment.address}" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-</div>
 
-<div class="container">
-
-  <div class="row">
-    <div class="col-md-12">
-      <h2>My bookmarks</h2>
-    </div>
-  </div>
-
-  <div class="row">
-    <% @bookmarks.each do |b| %>
-      <div class="col-md-3">
-        <div class="city">
-          <%= b.apartment.address %> <i class= "pull-right fa fa-times"></i>
-        </div>
-        <div class="photoapart">
-          <%= link_to image_tag(b.apartment.picture.url(:medium)),apartment_path(b.apartment) %>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h1>MY ACCOUNT</h1>
       </div>
-    <% end %>
-  </div>
-
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h2>My appartments</h2>
-      <ul>
-        <% @apartments.each do |a| %>
-        <li>
-          <%= "Addresse: #{a.address}" %>
-        </li>
-        <% end %>
-      </ul>
     </div>
   </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>My bookings</h2>
+          <ul>
+          <% @bookings.each do |b| %>
+            <li>
+              <%= "From the #{b.start_date} to the #{b.end_date} at #{b.apartment.address}" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>My bookmarks</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <% @bookmarks.each do |b| %>
+        <div class="col-md-3">
+          <div class="city">
+            <%= b.apartment.address %>
+            <%= link_to [b.apartment,b], method: :delete do %>
+              <i class= "pull-right fa fa-times"></i>
+            <% end %>
+          </div>
+          <div class="photoapart">
+            <%= link_to image_tag(b.apartment.picture.url(:medium)),apartment_path(b.apartment) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>My appartments</h2>
+        <ul>
+          <% @apartments.each do |a| %>
+          <li>
+            <%= "Addresse: #{a.address}" %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
 </div>
 

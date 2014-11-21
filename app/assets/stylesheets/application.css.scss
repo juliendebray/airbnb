@@ -2,9 +2,11 @@ $btn-warning-bg: #FF5A5F;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 @import "navbar";
 @import "home";
 @import "myaccount";
+@import "createappartment";
 
 body{
   font-family: 'Open Sans', sans-serif;
