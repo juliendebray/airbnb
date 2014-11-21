@@ -41,7 +41,9 @@ class ApartmentsController < ApplicationController
       @apartments = Apartment.all
     end
     if @apartments.size != 0
-      apartments_with_coordinates = @apartments.where.not(latitude: nil, longitude: nil)
+      apartments_with_coordinates = @apartments.reject do |a|
+        a.latitude == nil
+      end
       @markers = Gmaps4rails.build_markers(apartments_with_coordinates) do |apartment, marker|
         marker.lat apartment.latitude
         marker.lng apartment.longitude

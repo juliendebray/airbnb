@@ -1,17 +1,27 @@
-<%= render 'apartments/search_form' %>
-
-<h1>Appartment</h1>
+<div class="container content">
+  <div class="row">
+    <div class="col-md-12">
+      <br>
+      <br>
+      <%= render 'apartments/search_form' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Appartment info</h1>
+    </div>
+  </div>
 
 <%= image_tag @apartment.picture.url(:medium) %>
 
-<h2>Appartment infos:</h2>
+<h2>Appartment details</h2>
 <ul>
   <li>Address: <%= @apartment.address %></li>
   <li>Description: <%= @apartment.description%></li>
   <li>Price per night: <%= @apartment.price%></li>
 </ul>
 
-<h2>Appartment bookings:</h2>
+<h2>Appartment bookings</h2>
 <ul>
 <% @apartment.bookings[0...-1].each do |b|%>
   <li>
@@ -21,16 +31,15 @@
 </ul>
 
 <h2>Booking form</h2>
-<%= form_for(@booking, url: apartment_bookings_path(@apartment)) do |f| %>
+<%= bootstrap_form_for(@booking, url: apartment_bookings_path(@apartment)) do |f| %>
   <p>
-    <%= f.label :start_date %>
     <%= f.date_field :start_date %>
   </p>
   <p>
-    <%= f.label :start_date %>
     <%= f.date_field :end_date %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit class:"btn btn-primary" %>
   </p>
 <% end %>
+</div>
