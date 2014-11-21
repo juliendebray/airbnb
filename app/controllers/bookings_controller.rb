@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
     else
       redirect_to @apartment, alert: 'Apartment is not available'
     end
-    raise
   end
 
   def show
