@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :apartments, only: [:new, :create, :show, :index] do
 
     resources :bookings, only: [:create, :show]
-    resources :bookmarks, only: [:create]
+    resources :bookmarks, only: [:create, :destroy]
 
   end
 

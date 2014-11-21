@@ -1,19 +1,27 @@
-<h1>Create an Apartment</h1>
+<div class="container content text-center">
 
-<%= form_for(@apartment, html: { multipart: true}) do |f| %>
+  <h1>CREATE AN APPARTMENT</h1>
 
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
+  <div id="newappart" class="text-center">
 
-  <p>
-    <%= f.label :picture %>
-    <%= f.file_field :picture %>
-  </p>
-  <p><%= f.submit %></p>
+    <%= bootstrap_form_for(@apartment, html: { multipart: true}) do |f| %>
+     <%= f.label :address %>
+     <%= f.text_field :address, placeholder: 'Type your address' %>
+     <%= f.label :description %>
+     <%= f.text_area :description, placeholder: 'Describe your appartment' %>
+     <%= f.label :price %>
+     <%= f.number_field :price, placeholder: 'Type your price' %>
 
+    <p>
+      <%= f.label :picture %>
+      <%= f.file_field :picture %>
+    </p>
 
-<% end %>
+    <p><%= f.submit %></p>
+
+    <% end %>
+
+  </div>
+
+</div>
+
